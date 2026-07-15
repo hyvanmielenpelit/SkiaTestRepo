@@ -25,6 +25,39 @@ namespace SkiaSharpTest
             };
         }
 
+        private int _clickState = 0;
+
+        private void OnCarouselTapped(object sender, EventArgs e)
+        {
+            _clickState++;
+            if (_clickState > 5)
+                _clickState = 1;
+
+            switch (_clickState)
+            {
+                case 1:
+                    CenterLogo.IsVisible = false;
+                    TopLeftLogo.IsVisible = false;
+                    SettingsContainer.IsVisible = false;
+                    ModesContainer.IsVisible = false;
+                    PlayGameContainer.IsVisible = false;
+                    break;
+                case 2:
+                    PlayGameContainer.IsVisible = true;
+                    break;
+                case 3:
+                    ModesContainer.IsVisible = true;
+                    break;
+                case 4:
+                    SettingsContainer.IsVisible = true;
+                    break;
+                case 5:
+                    CenterLogo.IsVisible = true;
+                    TopLeftLogo.IsVisible = true;
+                    break;
+            }
+        }
+
         private async void OnOpenModalClicked(object? sender, EventArgs e)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();

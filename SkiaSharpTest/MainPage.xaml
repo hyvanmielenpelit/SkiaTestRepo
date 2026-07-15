@@ -6,18 +6,22 @@
              BackgroundColor="#1E1E1E">
 
     <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
-        <controls:ImageCarousel AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+        <controls:ImageCarousel x:Name="Carousel" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <controls:ImageCarousel.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCarouselTapped" />
+            </controls:ImageCarousel.GestureRecognizers>
+        </controls:ImageCarousel>
 
-        <controls:CachedImage Source="gnollhack-logo-test-2.png" HeightRequest="180" WidthRequest="180"
+        <controls:CachedImage x:Name="CenterLogo" Source="gnollhack-logo-test-2.png" HeightRequest="180" WidthRequest="180"
              HorizontalOptions="Center" VerticalOptions="Center"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
              AbsoluteLayout.LayoutFlags="PositionProportional" />
 
-        <Grid AbsoluteLayout.LayoutBounds="60, 35, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="None">
+        <Grid x:Name="TopLeftLogo" AbsoluteLayout.LayoutBounds="60, 35, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="None">
             <controls:CachedImage Source="gnollhack-icon-v2-512.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End"/>
         </Grid>
 
-        <Grid WidthRequest="130" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,10,5" AbsoluteLayout.LayoutBounds="1,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional">
+        <Grid x:Name="SettingsContainer" WidthRequest="130" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,10,5" AbsoluteLayout.LayoutBounds="1,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional">
             <StackLayout Spacing="4">
                 <controls:CustomImageButton Text="Reset" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
                 <controls:CustomImageButton Text="Vault" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
@@ -29,34 +33,36 @@
         </Grid>
 
         <StackLayout Spacing="6" HorizontalOptions="Center" VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0.5, 0.90, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="300" >
-            <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,10" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="50" />
-                </Grid.ColumnDefinitions>
-                <controls:CustomLabel Text="Classic Mode" TextColor="White" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
-                <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
-            </Grid>
-            <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,10" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="50" />
-                </Grid.ColumnDefinitions>
-                <controls:CustomLabel Text="Casual Mode" TextColor="White" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
-                <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
-            </Grid>
-            <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="32" VerticalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="50" />
-                </Grid.ColumnDefinitions>
-                <controls:CustomLabel Text="Wizard Mode" TextColor="LightBlue" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
-                <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
-            </Grid>
-            <Grid RowSpacing="6" ColumnSpacing="6" Margin="0,0,0,15" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
-                <controls:CustomLabel Text="Tournament" TextColor="LightGreen" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="280" HeightRequest="30" />
-            </Grid>
-            <Grid WidthRequest="300" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout x:Name="ModesContainer" Spacing="6">
+                <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,10" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <controls:CustomLabel Text="Classic Mode" TextColor="White" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
+                    <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                </Grid>
+                <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,10" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <controls:CustomLabel Text="Casual Mode" TextColor="White" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
+                    <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                </Grid>
+                <Grid RowSpacing="6" ColumnSpacing="12" Margin="0,0,0,15" HorizontalOptions="Center" HeightRequest="32" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <controls:CustomLabel Text="Wizard Mode" TextColor="LightBlue" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="180" HeightRequest="30" />
+                    <Switch Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                </Grid>
+                <Grid RowSpacing="6" ColumnSpacing="6" Margin="0,0,0,15" HeightRequest="32" HorizontalOptions="Center" VerticalOptions="Center">
+                    <controls:CustomLabel Text="Tournament" TextColor="LightGreen" FontSize="19" FontFamily="Diablo" Grid.Column="0" WidthRequest="280" HeightRequest="30" />
+                </Grid>
+            </StackLayout>
+            <Grid x:Name="PlayGameContainer" WidthRequest="300" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center">
                 <controls:CustomImageButton Text="Play Game" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="24" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill" />
             </Grid>
         </StackLayout>
