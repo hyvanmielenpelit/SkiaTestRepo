@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="SafeAreaiOS.csproj">
-    <Deploy Solution="Debug|*" />
-  </Project>
-</Solution>
