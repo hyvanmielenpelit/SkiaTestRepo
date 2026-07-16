@@ -7,7 +7,7 @@
     Title="SkiaSharpTest">
 
     <ShellContent
-        Title="Home"
+        Title="Skia Performance Test"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
