@@ -66,5 +66,10 @@ namespace SkiaSharpTest
             sw.Stop();
             page.SetOpenTime(sw.Elapsed);
         }
+
+        private void OnExitClicked(object? sender, EventArgs e)
+        {
+            Application.Current?.Quit();
+        }
     }
 }

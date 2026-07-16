@@ -28,7 +28,7 @@
                 <controls:CustomImageButton Text="Options" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
                 <controls:CustomImageButton Text="Settings" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
                 <controls:CustomImageButton Text="About" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
-                <controls:CustomImageButton Text="Exit" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="Exit" Clicked="OnExitClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
             </StackLayout>
         </Grid>
 
