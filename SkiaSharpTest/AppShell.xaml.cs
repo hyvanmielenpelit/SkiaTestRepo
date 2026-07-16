@@ -20,6 +20,6 @@ public partial class AppShell : Shell
 		}
 
 		var displayInfo = DeviceDisplay.Current.MainDisplayInfo;
-		MainShellContent.Title = $"Skia Performance Test (v{version}) - {displayInfo.Width}x{displayInfo.Height}";
+		MainShellContent.Title = $"SkiaSharp Performance Test (v{version}) - {displayInfo.Width}x{displayInfo.Height} - [Mock GnollHack]";
 	}
 }
