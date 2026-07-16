@@ -23,11 +23,11 @@
 
         <Grid x:Name="SettingsContainer" WidthRequest="130" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,10,5" AbsoluteLayout.LayoutBounds="1,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional">
             <StackLayout Spacing="4">
-                <controls:CustomImageButton Text="Reset" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
-                <controls:CustomImageButton Text="Vault" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
-                <controls:CustomImageButton Text="Options" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
-                <controls:CustomImageButton Text="Settings" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
-                <controls:CustomImageButton Text="About" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="Reset" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="Vault" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="Options" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="Settings" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
+                <controls:CustomImageButton Text="About" Clicked="OnOpenModalClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
                 <controls:CustomImageButton Text="Exit" Clicked="OnExitClicked" FontFamily="Diablo" FontSize="16" TextColor="White" BackgroundColor="Transparent" WidthRequest="120" HeightRequest="50" />
             </StackLayout>
         </Grid>
