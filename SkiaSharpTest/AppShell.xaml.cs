@@ -19,6 +19,7 @@ public partial class AppShell : Shell
 			version = version.Substring(0, version.IndexOf('+'));
 		}
 
-		MainShellContent.Title = $"Skia Performance Test (v{version})";
+		var displayInfo = DeviceDisplay.Current.MainDisplayInfo;
+		MainShellContent.Title = $"Skia Performance Test (v{version}) - {displayInfo.Width}x{displayInfo.Height}";
 	}
 }
