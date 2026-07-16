@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:SkiaSharpTest"
     Title="SkiaSharpTest">
 
-    <ShellContent
+    <ShellContent x:Name="MainShellContent"
         Title="Skia Performance Test"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
