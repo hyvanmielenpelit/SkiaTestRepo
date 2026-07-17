@@ -5,11 +5,16 @@
 #include "include/core/SkRect.h"
 #include "include/core/SkSurface.h"
 #include "include/core/SkData.h"
+#include "include/core/SkMilestone.h"
 #include <chrono>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <numeric>
+
+#ifndef SKIA_GIT_HASH
+#define SKIA_GIT_HASH "unknown"
+#endif
 
 const int CANVAS_WIDTH = 3200;
 const int CANVAS_HEIGHT = 2000;
@@ -29,6 +34,9 @@ sk_sp<SkImage> load_image(const char* path) {
 }
 
 int main() {
+    std::cout << "Skia Milestone: m" << SK_MILESTONE << std::endl;
+    std::cout << "Skia Commit: " << SKIA_GIT_HASH << std::endl;
+
     auto img1 = load_image("C:/repos/SkiaTestRepo/SkiaSharpTest/Resources/Raw/main-menu-gnoll.jpg");
     auto img2 = load_image("C:/repos/SkiaTestRepo/SkiaSharpTest/Resources/Raw/main-menu-dwarf.jpg");
 
@@ -95,6 +103,8 @@ int main() {
     // Write to file
     std::ofstream out("benchmark_results.txt");
     if (out.is_open()) {
+        out << "Skia Milestone: m" << SK_MILESTONE << "\n";
+        out << "Skia Commit: " << SKIA_GIT_HASH << "\n";
         out << "Canvas Size: " << CANVAS_WIDTH << "x" << CANVAS_HEIGHT << "\n";
         out << "Total Frames: " << NUM_FRAMES << "\n";
         out << "Total Time: " << total_ms << " ms\n";
