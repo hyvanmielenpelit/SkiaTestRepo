@@ -11,6 +11,7 @@
 #include <fstream>
 #include <vector>
 #include <numeric>
+#include <string>
 
 #ifndef SKIA_GIT_HASH
 #define SKIA_GIT_HASH "unknown"
@@ -134,7 +135,8 @@ int main() {
     // ==========================================
     // Write results to file
     // ==========================================
-    std::ofstream out("benchmark_results.txt");
+    std::string filename = "benchmark_results_m" + std::to_string(SK_MILESTONE) + ".txt";
+    std::ofstream out(filename);
     if (out.is_open()) {
         out << "Skia Milestone: m" << SK_MILESTONE << "\n";
         out << "Skia Commit: " << SKIA_GIT_HASH << "\n";
@@ -165,9 +167,9 @@ int main() {
             out << "\n";
         }
         out.close();
-        std::cout << "\nResults written to benchmark_results.txt" << std::endl;
+        std::cout << "\nResults written to " << filename << std::endl;
     } else {
-        std::cerr << "\nFailed to write results to benchmark_results.txt" << std::endl;
+        std::cerr << "\nFailed to write results to " << filename << std::endl;
     }
 
     return 0;

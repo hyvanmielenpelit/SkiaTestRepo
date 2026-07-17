@@ -482,5 +482,6 @@ $RECYCLE.BIN/
 *.swp
 
 # Benchmark Results
-benchmark_results.txt
+benchmark_results_m*.txt
+
 
